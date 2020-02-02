@@ -138,7 +138,100 @@ print(test_string.replace("string","sentence"))
 quote_list=test_string.split(" ") #convert the consituents of a string into a list using the defined separater
 print(quote_list)
 print(type(quote_list))
-'''
+
 
 #Playing with files
+test_file=open("Test_file.txt","r+")
+print(test_file.mode)
+print(test_file.name)
+test_file.write("This is the first line\n")
+test_file.write("This the second line\n")
+print(test_file.read())
+test_file.close()
+'''
 
+#Playing with Classes and Functions
+class Animal:
+    __name=""
+    __height=0
+    __weight=0
+    __sound=0
+    
+    #This is the Constructor...called when the class is instantiated
+    def __init__(self, name, height, weight, sound):
+        self.__name=name
+        self.__height=height
+        self.__weight=weight
+        self.__sound=sound
+    
+    def set_name(self,name):
+        self.__name=name
+        
+    def get_name(self):
+        return self.__name
+    
+    def set_height(self,height):
+        self.__height=height
+        
+    def get_height(self):
+        return self.__height
+   
+    def get_type(self):
+        print("Animal")
+        
+    def get_sound(self):
+        return self.__sound
+        
+    def toString(self):
+        return "{} is {} cm tall {} kgs and says {}".format(self.__name,self.__height,self.__weight,self.__sound)
+
+#Creating an instance of an Animal    
+cat = Animal("Whiskers",30, 12, 'Meow')
+print(cat)
+print(cat.toString())
+
+#Class inheritance
+class Dog(Animal):
+    __owner = ""
+    
+    def __init__(self, name, height, weight, sound, owner):
+        self.__owner=owner
+        super(Dog,self).__init__(name,height,weight,sound)
+        
+    def set_owner(self,owner):
+        self.__owner=owner
+        
+    def get_owner(self):
+        return self.__owner
+    
+    def get_type(self):
+        print("Dog")
+    
+#Overriding the function from the inherited class    
+    def toString(self):
+        return "{} is {} cm tall {} kgs and says {}. His owner is Thomas".format(self.__name,self.__height,self.__weight,self.__sound)
+    
+#Method overloading.. action depends on the params passed in
+    def multiple_sounds(self,how_many=None):
+        if how_many==None:
+            print(self.get_sound())
+        else:
+            print(self.get_sound() * how_many)
+            
+#Creating an instance of a Dog
+buddy=Dog("Buddy",60,37,"Woof","Thomas")
+print(buddy)
+#print(buddy.toString())
+print(buddy.get_name())
+buddy.multiple_sounds(3)
+
+#Polymorphism
+
+class AnimalTesting:
+    def get_type(self,Animal):
+        Animal.get_type()
+        
+test_animals=AnimalTesting()
+test_animals.get_type(cat)
+test_animals.get_type(buddy)
+#End
