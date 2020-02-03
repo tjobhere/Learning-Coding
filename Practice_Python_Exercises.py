@@ -31,6 +31,5 @@ else:
 '''
 
 #Exercise 3
-
-print()
+#Planning to start the next one
     
