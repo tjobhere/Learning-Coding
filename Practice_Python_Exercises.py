@@ -137,7 +137,7 @@ b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 c = [x for x in a for y in b if x==y]
 d = [x for x in c if c.count(x)==1]
 print(d)
-'''
+
 
 #Exercise 11 --> Check for a Prime number
 import random
@@ -154,3 +154,21 @@ num=random.randint(1,100)
 print(num)
 print(check_if_prime(num))
 
+
+#Exercise 12
+a = [5, 10, 15, 20, 25]
+print(a[0],a[len(a)-1])
+'''
+
+#Exercise 13 --> Generate Fibonnaci numbers
+def generate_fibonnaci(count):
+    print('1',end=' ')
+    two_previous=0
+    one_previous=1
+    for i in range(1,count):
+        current=one_previous+two_previous
+        print(current,end=' ')
+        two_previous=one_previous
+        one_previous=current
+        
+generate_fibonnaci(int(input('Enter no.s of Fibonnaci required: ')))
