@@ -60,5 +60,14 @@ for x_a in a:
             outcome.append(x_a)
 outcome.sort()
 print(outcome)
-'''
 
+
+#Exercise 6
+input_str=input('Enter String:')
+inverse_str=input_str[::-1]
+if input_str.capitalize()==inverse_str.capitalize():
+    print('You have entered a Palindrome')
+else:
+    print('Not a Palindrome')
+    
+'''
