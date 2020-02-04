@@ -139,4 +139,18 @@ d = [x for x in c if c.count(x)==1]
 print(d)
 '''
 
-#Exercise 11
+#Exercise 11 --> Check for a Prime number
+import random
+
+def check_if_prime(number_to_check):
+    for i in range(2,number_to_check):
+        if number_to_check%i==0:
+            return("Number {} is not a Prime number".format(number_to_check))
+        else:
+            continue
+    return("Number {} is a Prime number".format(number_to_check))
+
+num=random.randint(1,100)
+print(num)
+print(check_if_prime(num))
+
