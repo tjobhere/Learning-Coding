@@ -70,4 +70,63 @@ if input_str.capitalize()==inverse_str.capitalize():
 else:
     print('Not a Palindrome')
     
+
+#Exercise 7 -- Lst comprehension
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+b = [x for x in a if x%2==0]
+print(b)
+
+
+#Exercise 8 -- Rock Paper Scissor --> Human vs. Computer
+import random
+
+Options=['Rock','Paper','Scissor']
+continue_flag='y'
+while continue_flag!='n':
+    human_in=input('Enter choice (Rock, Paper, Scissor): ')
+    computer_ctr=random.randrange(0,3)
+    computer_choice=Options[computer_ctr]
+    print('Computer choice: ',computer_choice)
+    if (human_in.capitalize()=='Rock'):
+        if computer_choice.capitalize()=='Scissor':
+            print('You win!!')
+        elif computer_choice.capitalize()=='Paper':
+            print('You lose!')
+        else:
+            print('Draw')
+    if (human_in.capitalize()=='Paper'):
+        if computer_choice.capitalize()=='Rock':
+            print('You win!!')
+        elif computer_choice.capitalize()=='Scissor':
+            print('You lose!')
+        else:
+            print('Draw')
+    if (human_in.capitalize()=='Scissor'):
+        if computer_choice.capitalize()=='Paper':
+            print('You win!!')
+        elif computer_choice.capitalize()=='Rock':
+            print('You lose!')
+        else:
+            print('Draw')
+    continue_flag=input('Continue(y/n)? ')
+
+
+#Exercise 9
+import random
+
+flag='Y'
+while flag=='y' or flag=='Y':    
+    rnd_num=random.randint(1,9) # Generates a random integer between 1 and 9 including them
+    user_in=int(input('Enter your guess (1 to 9):'))
+    diff=rnd_num - user_in
+    print(rnd_num)
+    if diff==0:
+        print('You got it!')
+    elif diff<0:
+        print('You guessed higher.')
+    else:
+        print('You guessed lower.')
+    flag=input('Continue(y/n)? ')
 '''
+
+#
