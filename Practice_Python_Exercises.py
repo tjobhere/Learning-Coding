@@ -158,7 +158,7 @@ print(check_if_prime(num))
 #Exercise 12
 a = [5, 10, 15, 20, 25]
 print(a[0],a[len(a)-1])
-'''
+
 
 #Exercise 13 --> Generate Fibonnaci numbers
 def generate_fibonnaci(count):
@@ -172,3 +172,26 @@ def generate_fibonnaci(count):
         one_previous=current
         
 generate_fibonnaci(int(input('Enter no.s of Fibonnaci required: ')))
+
+
+#Exercise 14 --> Include Lists and Sets
+import random
+def create_list(size):
+    org_list=[]
+    for i in range(0,size):
+        org_list.append(random.randint(0,10))
+    print('Initial List :', org_list)
+    return org_list
+
+def remove_list_duplication(input_list):
+    out_list=list(set(input_list)) #results in retaining only the unique members in the list
+    return out_list
+
+list_size=random.randint(1,10)
+print('De-duplicated List :',remove_list_duplication(create_list(list_size)))
+'''
+
+#Exercise 15 --> Include split and join method in strings
+input_str=input('Enter the input statement: ')
+input_list=input_str.split()
+print(" ".join(input_list[::-1]))
