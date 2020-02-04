@@ -31,6 +31,9 @@ else:
 '''
 
 #Exercise 3
-
-print()
-    
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+new_list=[]
+for counter in a:
+    if counter<5:
+        new_list.append(counter)
+print(new_list)
