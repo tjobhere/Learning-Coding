@@ -28,7 +28,7 @@ elif (num%2)==0:
     print('Number {} is Even and not a multiple of 4'.format(num))
 else:
     print('Number {} is Odd'.format(num))
-'''
+
 
 #Exercise 3
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
@@ -37,3 +37,13 @@ for counter in a:
     if counter<5:
         new_list.append(counter)
 print(new_list)
+'''
+
+#Exercise 4
+num=int(input('Enter number:'))
+for x in range(1,num):
+   if (num%x)==0:
+        print(x)
+print(num)
+
+#Exercise 5
