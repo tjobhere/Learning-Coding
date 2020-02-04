@@ -37,13 +37,28 @@ for counter in a:
     if counter<5:
         new_list.append(counter)
 print(new_list)
-'''
+
 
 #Exercise 4
 num=int(input('Enter number:'))
-for x in range(1,num):
+for x in range(1,num+1): #+1 is to include the number itself in the range
    if (num%x)==0:
         print(x)
-print(num)
+
 
 #Exercise 5
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 1, 1, 1, 1, 5, 6, 7, 7 ,2, 3, 4]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+outcome=[]
+
+for x_a in a:
+    if x_a in b:
+        print('Found : ',x_a)
+        if x_a in outcome:
+            continue
+        else:
+            outcome.append(x_a)
+outcome.sort()
+print(outcome)
+'''
+
