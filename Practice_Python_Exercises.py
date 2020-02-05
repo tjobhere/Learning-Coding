@@ -189,9 +189,44 @@ def remove_list_duplication(input_list):
 
 list_size=random.randint(1,10)
 print('De-duplicated List :',remove_list_duplication(create_list(list_size)))
-'''
+
 
 #Exercise 15 --> Include split and join method in strings
 input_str=input('Enter the input statement: ')
 input_list=input_str.split()
 print(" ".join(input_list[::-1]))
+'''
+
+#Exercise 16 --> Password generator
+import random
+import string
+
+#Create a tuple of possible values
+'''
+#Way 1
+pwd_set=[26,string.ascii_lowercase],[10,string.digits],[32,string.punctuation],[26,string.ascii_uppercase]
+
+#print(pwd_set)
+#for x in range(0,4):
+#    for y in range(0,2):
+#        print('x : ',x,' y: ',y,' Value : ',pwd_set[x][y],' Type : ',type(pwd_set[x][y]))
+
+length=int(input('Enter password length: '))
+psswd=''
+for i in range(0,length):
+    #Pick an input set at random from the tuple of possible values
+    rnd_xpos=random.randint(0,3)
+    
+    #Pick a random position in the input set chosen based on the length of possible values of that set
+    rnd_pos=random.randint(0,pwd_set[rnd_xpos][0]-1)
+    
+    #Pick the specific value in the chosen set string
+    psswd+=(pwd_set[rnd_xpos][1][rnd_pos])
+    
+print(psswd)
+'''
+#Way 2
+pwd_set=string.ascii_letters+string.digits+string.punctuation
+length=int(input('Enter password length: '))
+psswd="".join(random.sample(pwd_set,length))
+print(psswd)
